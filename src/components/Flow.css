@@ -1,0 +1,101 @@
+/* ===== Flow Section ===== */
+.flow {
+    background: var(--color-warm-bg);
+    position: relative;
+}
+
+.flow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.flow-steps::before {
+    content: '';
+    position: absolute;
+    left: 35px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--color-primary-light), var(--color-accent-light));
+    border-radius: 2px;
+}
+
+.flow-step {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-lg);
+    position: relative;
+}
+
+.flow-step-number {
+    flex-shrink: 0;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    box-shadow: 0 8px 25px rgba(45, 106, 79, 0.3);
+    z-index: 1;
+    transition: all var(--transition-base);
+}
+
+.flow-step:hover .flow-step-number {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(45, 106, 79, 0.4);
+}
+
+.flow-step-content {
+    flex: 1;
+    background: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 15px var(--color-card-shadow);
+    transition: all var(--transition-base);
+}
+
+.flow-step:hover .flow-step-content {
+    transform: translateX(8px);
+    box-shadow: 0 8px 30px var(--color-card-shadow);
+}
+
+.flow-step-content h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.flow-step-content h3 .step-icon {
+    color: var(--color-accent);
+    font-size: 1.2rem;
+}
+
+.flow-step-content p {
+    color: var(--color-text-light);
+    font-size: var(--font-size-sm);
+    line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+    .flow-steps::before {
+        left: 25px;
+    }
+
+    .flow-step-number {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-base);
+    }
+}

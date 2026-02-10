@@ -1,0 +1,110 @@
+/* ===== Products Section ===== */
+.products {
+    background: var(--color-warm-bg-alt);
+    position: relative;
+}
+
+.products-wave-top {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    width: 100%;
+}
+
+.products-wave-top svg {
+    display: block;
+    width: 100%;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+}
+
+.product-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: all var(--transition-base);
+    cursor: pointer;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(45, 106, 79, 0.12);
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(45, 106, 79, 0.05), rgba(45, 106, 79, 0.1));
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image svg {
+    width: 80px;
+    height: 80px;
+    transition: all var(--transition-base);
+}
+
+.product-card:hover .product-image svg {
+    transform: scale(1.15);
+}
+
+.product-category-badge {
+    position: absolute;
+    top: var(--space-sm);
+    left: var(--space-sm);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: white;
+    font-size: var(--font-size-xs);
+    padding: 4px 12px;
+    border-radius: var(--radius-xl);
+    font-weight: 500;
+}
+
+.product-info {
+    padding: var(--space-md);
+}
+
+.product-info h3 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-xs);
+}
+
+.product-info p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    line-height: 1.7;
+}
+
+.product-tag {
+    display: inline-block;
+    margin-top: var(--space-xs);
+    padding: 2px 10px;
+    background: rgba(45, 106, 79, 0.08);
+    color: var(--color-primary);
+    font-size: var(--font-size-xs);
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+}
+
+@media (max-width: 968px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
